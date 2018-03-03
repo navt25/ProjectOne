@@ -14,6 +14,7 @@ public class HelloController extends AbstractController {
 	protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 		ModelAndView modelandview = new ModelAndView("index");
 		System.out.println("one test");
+		System.out.println("twoTest");
 		modelandview.addObject("welcomeMessage" , "HI,welcome to first application");
 		return modelandview;
 		
