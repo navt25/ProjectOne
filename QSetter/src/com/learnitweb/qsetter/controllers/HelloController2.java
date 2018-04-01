@@ -87,8 +87,9 @@ public class HelloController2 {
 			// DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","navneet");
 			con = DbConnection.getConnection();
 			stmt = con.createStatement();
-String query = "insert into Electrical values('" + name + "','" + gender + "','" + date + "','" + sb + "','"+ details + "','"+ "SEQ_USER.NEXTVAL" + "')";
-			System.out.println("query :" + query);                                    /*insert into class values('ftre',SEQ_USER.NEXTVAL);*/
+		 //stmt.executeQuery("SELECT SEQ_USER.NEXTVAL FROM dual");
+String query = "insert into Electrical values('" + name + "','" + gender + "','" + date + "','" + sb + "','"+ details +  "','"+ 120 +  "')";
+			System.out.println("query :" + query);                                    /*,'"+ "SEQ_USER.NEXTVAL" + "' insert into class values('ftre',SEQ_USER.NEXTVAL);*/
 			stmt.executeUpdate(query);
 			System.out.println("query complete");
 			c = new CustomResponse("success", "result achieved");
