@@ -1,0 +1,31 @@
+.center {
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+}
+p.ex1 {
+    margin-top: 8cm;
+}
+table td {
+	border: 1px solid;
+	
+}
+table{
+	border-collapse:collapse;
+}
+
+#firstnameErrMsg{
+	color:red;
+}
+#lastnameErrMsg{
+	color:red;
+}
+.intro {
+    color: red;
+}
+.ex1{
+	color:green;
+}
+.errorMsg {
+	color:red;
+}

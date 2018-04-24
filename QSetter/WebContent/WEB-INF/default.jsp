@@ -2,20 +2,23 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
 <title>Insert title here</title>
 	<h1>First Spring MVC check</h1>
 	<h2>${welcomeMessage}</h2>
 </head>
 <body>
 <body>
-  <form>
+  <form name="EnrollmentForm" onclick="return validateForm()">
 <table style="width:50%">
 <p class="ex1">
-
-<label id="firstnameErrMsg"></label>
+<div class="intro">
+<label id="nameErrMsg"></label>
 <label id="genderErrMsg"></label>
-<label id="telErrMsg"></label>
+<label id="dobErrMsg"></label>
 <label id="interestsErrMsg"></label>
+<label id="detailsErrMsg"></label>
+</div>
 
   <tr>
     <td>name</td>
@@ -25,16 +28,16 @@
  <tr>
 	    <td>gender</td>
         <td>
-			<input type="radio" class="radioBtnClass" id="radioMale" name="gender" value="male" > Male<br>
-		    <input type="radio" class="radioBtnClass" id="radioFemale" name="gender" value="female"> Female<br>
-			<input type="radio" class="radioBtnClass" id="radioOther" name="gender" value="other"> Other  
+			<input type="radio" class="radioBtnClass" id="radioMale" name="gender" value="0" > Male<br>
+		    <input type="radio" class="radioBtnClass" id="radioFemale" name="gender" value="1"> Female<br>
+			<input type="radio" class="radioBtnClass" id="radioOther" name="gender" value="2"> Other  
 	   </td>    </tr>
   
    	<tr>
 	   <td>D.O.B.</td>
 	   <td>
 			 <input id = "demo" type="date" class="dateClass2" name="dob">
-			 <input type="submit">
+			 
 	   </td>
 	</tr>
     <tr>
@@ -45,13 +48,15 @@
 	  </td>    </tr> 
 	  
 	
-   <tr>
+ <tr>
   <td>DETAILS</td>
-  <td><select name="details" id="search">
-		  		<option value="lang">language</option>
+  <td><select  name="details" id="search">
+		  		<option value="" disabled selected>--Please select--</option>
+				<option value="lang">language</option>
 				<option value="sub">subject</option>
-      </td>   </tr>
-
+     </select>
+	 </td>  
+	  </tr>
   <tr>
   <td>Additional details</td>
   <td><select name="drop" id="drop1" value= "default" >
@@ -60,8 +65,11 @@
 </table>
 			<button id = "btn" type="button">Login</button>
 </form>
-			<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+            <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+			 
 			<script type="text/javascript" src="js/default_.js"> </script>
+			<link rel="stylesheet" type="text/css" href="css/applicationFormStyle.css" />
+	       
 </body>
 </html>
 

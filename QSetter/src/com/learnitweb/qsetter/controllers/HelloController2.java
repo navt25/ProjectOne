@@ -2,6 +2,7 @@ package com.learnitweb.qsetter.controllers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -87,10 +88,17 @@ public class HelloController2 {
 			// DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","navneet");
 			con = DbConnection.getConnection();
 			stmt = con.createStatement();
-		 String s="SELECT SEQ_USER.NEXTVAL FROM dual";
-String query = "insert into Electrical values('" + name + "','" + gender + "','" + date + "','" + sb + "','"+ details +  "','"+ s +  "')";
-			System.out.println("query :" + query);                                    /*,'"+ "SEQ_USER.NEXTVAL" + "' insert into class values('ftre',SEQ_USER.NEXTVAL);*/
-			stmt.executeUpdate(query);
+			
+			String sql = "SELECT SEQ_USER.NEXTVAL FROM dual";
+			ResultSet rs = stmt.executeQuery(sql);
+			int id=0;
+			while (rs.next()) {
+				 id = rs.getInt("NEXTVAL");
+			}
+			 String query = "insert into Electrical values('" + name + "','" + gender +
+			"','" + date + "','" + sb + "','"+ details + "','"+ id + "')";
+			 System.out.println("query :" + query);
+			 stmt.executeUpdate(query);
 			System.out.println("query complete");
 			c = new CustomResponse("success", "result achieved");
 			System.out.println(c.toString());

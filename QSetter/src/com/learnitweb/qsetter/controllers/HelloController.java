@@ -17,12 +17,7 @@ public class HelloController {
 		model.addObject("welcomeMessage", "helloworld");
 		System.out.println("inside controller");
 		return model;
-	}
-	
-	
-	
-	
-	
+	}		
 }
 
 
