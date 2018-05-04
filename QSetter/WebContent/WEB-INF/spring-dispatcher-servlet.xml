@@ -23,9 +23,6 @@
   	<mvc:resources location="/js/" mapping="/js/**" />
   	
   	 
-  	
-  
-
     <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
@@ -34,7 +31,11 @@
         <property name="suffix">
             <value>.jsp</value>
         </property>
+   
     </bean>
-	   
+	 <bean id="messageSource"
+    	class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
+        <property name="basename" value="/WEB-INF/messages"/>
+    </bean>  
  
 </beans>

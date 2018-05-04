@@ -124,7 +124,13 @@ $(document).ready(function() {
 	       
 	    });   	
 	    	
-	    });
-    
-
+	    });	
+	    /*console.log("first value");
+            $("#btn1").click(function(){
+            	  console.log("2 value");
+	    	var identity = $('#identity').val();
+	    	  console.log("3 value");
+	    	
+            }); */ 	
+	    	
 });

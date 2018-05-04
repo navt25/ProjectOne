@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 
 <title>Insert title here</title>
 	<h1>First Spring MVC check</h1>
-	<h2>${welcomeMessage}</h2>
+	<h2>${welcomeMessage2}</h2>
 </head>
 <body>
 <body>
@@ -21,8 +22,8 @@
 </div>
 
   <tr>
-    <td>name</td>
-	<td><input type="text" id="fname" name="fname" /></td>
+                          <td><spring:message code="label.fname"/></td>
+	                      <td><input type="text" id="fname" name="fname" /></td>
   </tr>
 
  <tr>
@@ -59,7 +60,9 @@
 	  </tr>
   <tr>
   <td>Additional details</td>
-  <td><select name="drop" id="drop1" value= "default" >
+  <td><select name="drop" id="drop1" value= "default" > <!-- default -->
+
+
   </td> </tr>
 		
 </table>
