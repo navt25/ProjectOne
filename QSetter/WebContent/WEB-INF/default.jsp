@@ -34,7 +34,7 @@
    			<tr>
 	   			<td>D.O.B.</td>
 	   			<td>
-			 		<input id = "demo" type="date" class="dateClass2" name="dob"> test change
+			 		<input id = "demo" type="date" class="dateClass2" name="dob"> test change new
 	   			</td>
 			</tr>
     		<tr>
