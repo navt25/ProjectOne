@@ -10,12 +10,12 @@ import com.learnitweb.qsetter.request.SearchCriteria;
 
 @Controller
 
-public class HelloController {
+public class FrontControllerPageViews {
 	
 	@RequestMapping("/")//   /welcome
 	public ModelAndView helloWorld() {
 		ModelAndView model = new ModelAndView("HomePage");//default
-		model.addObject("welcomeMessage", "helloworld");
+		model.addObject("welcomeMessage", "");
 		System.out.println("inside controller");
 		return model;
 	}

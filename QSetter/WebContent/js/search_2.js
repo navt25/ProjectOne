@@ -1,4 +1,5 @@
 $(document).ready(function() {
+$("#btn1").click(function(){
 	var jsonObj = {}
 	console.log(jsonObj);
 	jsonObj["identity"] = $("#identity").val();
@@ -29,7 +30,7 @@ $(document).ready(function() {
 });   	
 	
 });	
-	
+});	
 	    /*console.log("first value");
             $("#btn1").click(function(){
             	  console.log("2 value");

@@ -19,7 +19,7 @@ import com.learnitweb.response.CustomResponse;
 import com.util.DbConnection;
 
 @Controller
-public class HelloController2 {
+public class SearchViewController {
 	@ResponseBody
 	@RequestMapping("/welcomenew")
 	public ArrayList helloWorld(@RequestBody SearchCriteria b) {
@@ -83,30 +83,43 @@ public class HelloController2 {
 		Connection con = null;
 		Statement stmt = null;
 		try {
-			// Class.forName("oracle.jdbc.driver.OracleDriver");
-			// con =
-			// DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","navneet");
 			con = DbConnection.getConnection();
 			stmt = con.createStatement();
-			
 			String sql = "SELECT SEQ_USER.NEXTVAL FROM dual";
 			ResultSet rs = stmt.executeQuery(sql);
 			int id=0;
 			while (rs.next()) {
-				 id = rs.getInt("NEXTVAL");
-			}
-			 String query = "insert into Electrical values('" + name + "','" + gender +
+				 id = rs.getInt("NEXTVAL");}
+			 String query = "insert into Student_details values('" + name + "','" + gender +
 			"','" + date + "','" + sb + "','"+ details + "','"+ id + "')";
 			 System.out.println("query :" + query);
 			 stmt.executeUpdate(query);
 			System.out.println("query complete");
 			c = new CustomResponse("success", "result achieved");
 			System.out.println(c.toString());
+			
+			  rs.close();
+		      stmt.close();
+		      con.close();
 		} catch (Exception e) {
 			// Handle errors for Class.forName
 			e.printStackTrace();
 			c = new CustomResponse("failure", "result not achieved");
 		}
+		finally{
+		      //finally block used to close resources
+		      try{
+		         if(stmt!=null)
+		            stmt.close();
+		      }catch(SQLException se2){
+		      }// nothing we can do
+		      try{
+		         if(con!=null)
+		        	con.close();
+		      }catch(SQLException se){
+		         se.printStackTrace();
+		      }
+		   }
 		// System.out.println("query complete 2 "+model);
 		return c;
 	}

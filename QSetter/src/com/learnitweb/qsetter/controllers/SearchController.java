@@ -40,7 +40,7 @@ public class SearchController {
 		try {
 			con = DbConnection.getConnection();
 			stmt = con.createStatement();
-			String query= "select * from Electrical where id = '"+idofStudent+"'";
+			String query= "select * from Student_details where id = '"+idofStudent+"'";
 			System.out.println("query :" + query);	
 			System.out.println("value 2 of search");
 			rs = stmt.executeQuery(query);
@@ -53,12 +53,30 @@ public class SearchController {
 			
 			 c = new CustomResponse("success", "result achieved");
 			 System.out.println(c.toString());
+			 rs.close();
+		     stmt.close();
+		     con.close();
 		} 
 		catch (Exception e) {
 			// Handle errors for Class.forName
 			e.printStackTrace();
 			c = new CustomResponse("failure", "result not achieved");
 		}
+		finally{
+		      //finally block used to close resources
+		      try{
+		         if(stmt!=null)
+		            stmt.close();
+		      }catch(SQLException se2){
+		      }// nothing we can do
+		      try{
+		         if(con!=null)
+		        	con.close();
+		      }catch(SQLException se){
+		         se.printStackTrace();
+		      }
+		   }
+		
 		// System.out.println("query complete 2 "+model);
 		return c;
 	}
