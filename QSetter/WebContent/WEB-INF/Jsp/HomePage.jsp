@@ -6,29 +6,50 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
-	<h1></h1>
 	
-	<h2>${welcomeMessage}</h2>
+	
+	<h1>${welcomeMessage}</h1>
+	
 <style>
+body {
+/* The image used 
+    background-image: ("img_girl.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    
+   
+    background-color: lightblue; --> 
+}
 #welcmPageMsg {
 		margin: auto;
-	    width: 20%;
-	    padding-top: 3cm;
-	    color:blue;
+	    width: 50%;
+	    padding-top: 4cm;
+	    padding-bottom: 3cm;
+	    color:black;
+	    text-decoration: underline;
+	    font-style: italic;
+        font-size: 40px;
 	}
 table {
-	    border: 1px solid red;
+	    border: 1px solid black;
+	    border-width: thick;
 		margin: auto;
-	    width: 20%;
-	    padding-top: 1cm;
+	    width: 60%;
+	    padding-top: 0cm;
+	    padding-bottom: 1cm;
 	}
 	td {
-	border: 1px solid red;
+	<!-- border: 1px solid red;-->
 	margin: auto;
     width: 20%;
 	padding-top: 1cm;
     text-align: center;
     vertical-align: middle;
+    font-style: italic;
+    font-size: 30px;
+   
 }
 #create{color:black;}
 #update{color:violet;}
@@ -38,7 +59,7 @@ table {
 </style>
 </head>
 <body>
-<p id="welcmPageMsg">Welcome to my university page </p>
+<p id="welcmPageMsg"><b>Welcome to my university page</b> </p>
 
 <table align="center" style="width:50%">
 	  <tr>

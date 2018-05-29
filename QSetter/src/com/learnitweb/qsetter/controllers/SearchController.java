@@ -1,5 +1,8 @@
 package com.learnitweb.qsetter.controllers;
 
+import java.util.ArrayList;/*new*/
+import java.util.List;
+import java.util.ListIterator;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -15,70 +18,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.learnitweb.qsetter.request.SearchCriteria;
-import com.learnitweb.qsetter.request.Srchid;
+import com.learnitweb.qsetter.dao.GetDao;
+import com.learnitweb.qsetter.request.Search;
 import com.learnitweb.response.CustomResponse;
 import com.util.DbConnection;
 
 @Controller
 public class SearchController {
-	
 	@ResponseBody
-	
 	@RequestMapping("/welcomesearch")
-	public CustomResponse helloWorld2(@RequestBody Srchid x) {
+	public void helloWorld2(@RequestBody Search x) {
 		System.out.println("value 1 of search");
 		ModelAndView model = new ModelAndView("searchTag");
 		model.addObject("searchMessage", "helloworld of id.");
-		System.out.println("inside controller of rollno");
-		int idofStudent = x.getIdentity();
-		System.out.println(idofStudent);
-     	CustomResponse c;
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		String nameOfsearch = null;
-		try {
-			con = DbConnection.getConnection();
-			stmt = con.createStatement();
-			String query= "select * from Student_details where id = '"+idofStudent+"'";
-			System.out.println("query :" + query);	
-			System.out.println("value 2 of search");
-			rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				     nameOfsearch = rs.getString("name");
-				     System.out.println("value 3 of search");
-	                System.out.println(nameOfsearch);
-	                System.out.println("value 4 of search");
-			}
-			
-			 c = new CustomResponse("success", "result achieved");
-			 System.out.println(c.toString());
-			 rs.close();
-		     stmt.close();
-		     con.close();
-		} 
-		catch (Exception e) {
-			// Handle errors for Class.forName
-			e.printStackTrace();
-			c = new CustomResponse("failure", "result not achieved");
-		}
-		finally{
-		      //finally block used to close resources
-		      try{
-		         if(stmt!=null)
-		            stmt.close();
-		      }catch(SQLException se2){
-		      }// nothing we can do
-		      try{
-		         if(con!=null)
-		        	con.close();
-		      }catch(SQLException se){
-		         se.printStackTrace();
-		      }
-		   }
-		
-		// System.out.println("query complete 2 "+model);
-		return c;
+		System.out.println("inside controller of search");
+		GetDao sc =new GetDao();
+		sc.srchController(x);
+		 
 	}
-
 }

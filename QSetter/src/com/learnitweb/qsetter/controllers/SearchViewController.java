@@ -14,114 +14,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.learnitweb.qsetter.dao.GetDao;
 import com.learnitweb.qsetter.request.SearchCriteria;
 import com.learnitweb.response.CustomResponse;
 import com.util.DbConnection;
 
 @Controller
 public class SearchViewController {
+	GetDao svc =new GetDao();
 	@ResponseBody
 	@RequestMapping("/welcomenew")
-	public ArrayList helloWorld(@RequestBody SearchCriteria b) {
-		String s = b.getSearch();
-		System.out.println(b.getSearch());
+	public void helloWorld(@RequestBody SearchCriteria b) {
 		ModelAndView model = new ModelAndView("default");
 		model.addObject("welcomeMessage", "helloworld");
-		System.out.println("inside controllertwo");
-
-		ArrayList l1 = new ArrayList();
-		// System.out.println("al");
-		if (s.equals("sub")) {
-			l1.add("Math");
-			l1.add("English");
-			l1.add("Science");
-			System.out.println(l1);
-		} else if (s.equals("lang")) {
-			l1.add("Gujarati");
-			l1.add("Marathi");
-			l1.add("Tamil");
-			System.out.println(l1);
-		}
-		return l1;
-
+		svc.srchViewController(b);
 	}
-
 	@ResponseBody
 	@RequestMapping("/welcomenew2")
-	public CustomResponse helloWorld2(@RequestBody SearchCriteria x) {
+	public void helloWorld2(@RequestBody SearchCriteria x) {
 		// SearchCriteria gender;
-
 		ModelAndView model = new ModelAndView("success");
 		model.addObject("welcomeMessage", "helloworld");
-		System.out.println("inside controller5");
-		String name = x.getName();
-		String gender = x.getGender();
-		String date = x.getDate();
-		String details = x.getDetails();
+		svc.srchViewController2(x);
 
-		// ArrayList additionalDetails=x.getAdditionalDetails();
-		ArrayList interest = x.getInterest();
-		StringBuffer sb = new StringBuffer();
-		for (int i = 0; i < interest.size(); i++) {
-			sb.append(interest.get(i));
-			if (i != interest.size() - 1) {
-				sb.append(",");
-			}
-		}
-		System.out.println(sb);
-
-		System.out.println(x.getName());
-		System.out.println(x.getGender());
-		System.out.println(x.getDate());
-
-		System.out.println(x.getInterest());
-		System.out.println(interest);
-
-		System.out.println(details);
-		// System.out.println(additionalDetails);
-		CustomResponse c;
-		Connection con = null;
-		Statement stmt = null;
-		try {
-			con = DbConnection.getConnection();
-			stmt = con.createStatement();
-			String sql = "SELECT SEQ_USER.NEXTVAL FROM dual";
-			ResultSet rs = stmt.executeQuery(sql);
-			int id=0;
-			while (rs.next()) {
-				 id = rs.getInt("NEXTVAL");}
-			 String query = "insert into Student_details values('" + name + "','" + gender +
-			"','" + date + "','" + sb + "','"+ details + "','"+ id + "')";
-			 System.out.println("query :" + query);
-			 stmt.executeUpdate(query);
-			System.out.println("query complete");
-			c = new CustomResponse("success", "result achieved");
-			System.out.println(c.toString());
-			
-			  rs.close();
-		      stmt.close();
-		      con.close();
-		} catch (Exception e) {
-			// Handle errors for Class.forName
-			e.printStackTrace();
-			c = new CustomResponse("failure", "result not achieved");
-		}
-		finally{
-		      //finally block used to close resources
-		      try{
-		         if(stmt!=null)
-		            stmt.close();
-		      }catch(SQLException se2){
-		      }// nothing we can do
-		      try{
-		         if(con!=null)
-		        	con.close();
-		      }catch(SQLException se){
-		         se.printStackTrace();
-		      }
-		   }
-		// System.out.println("query complete 2 "+model);
-		return c;
-	}
-
-}
+}}

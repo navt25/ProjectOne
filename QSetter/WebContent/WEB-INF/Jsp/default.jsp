@@ -8,7 +8,7 @@
 	</head>
 	<body>
   		<form name="EnrollmentForm" onclick="return validateForm()">
-			<table style="width:50%">
+			<table align="center" style="width:50%">
 			<p class="ex1">
 			<div class="intro">
 				<label id="nameErrMsg"></label>
@@ -58,8 +58,9 @@
   				<td>Additional details</td>
   				<td><select name="drop" id="drop1" value= "default" ></td> 
   			</tr>
-		</table>
-		<button id = "btn" type="button">Login</button>
+  			</table>
+  			<button  id = "btn" type="button">Login</button>
+		
 	</form>
 </body>
 </html>
