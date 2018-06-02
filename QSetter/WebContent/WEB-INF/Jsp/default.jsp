@@ -7,7 +7,7 @@
 		<title>Home page</title>
 	</head>
 	<body>
-  		<form name="EnrollmentForm" onclick="return validateForm()">
+  		<form name="EnrollmentForm" onclick=" ">
 			<table align="center" style="width:50%">
 			<p class="ex1">
 			<div class="intro">

@@ -54,10 +54,26 @@ if(name != null || gender != null || dte != null || interest!= null || details!=
 			    	if(l1.get(i)!=null) {
 			    		query2.append("'"+l1.get(i)+"' like '%"+l1.get(i)+"%'and");	
 			    	}
+			    	
+			    	if(name!=null)
+					    l1.add(name);
+					    if(gender!=null)
+					    l1.add(gender);
+					    if(dte!=null)
+					    l1.add(dte);
+					    if(interest!=null)
+					    l1.add(interest);
+					    if(details!=null)
+					    l1.add(details);
+					    if(id!=null)
+					    l1.add(id);   	
+  if(l1.get(i)!=null) {
+		query2.append("'"+l1.get(i)+"' like '%"+l1.get(i)+"%'and");	
+}		    		    	
 			    }
 			    String query3 = query2.toString();
 		    	/*if(query3.endsWith("and")) {
-		    		query3 = query3.substring(query3.length()-1);
+		    		query3 = query3.substring(query3.);
 		    		//query3 = query3.substring(0, query3.length() - 3);	
 		    	}*/
 			System.out.println(query3);
@@ -90,7 +106,6 @@ if(name != null || gender != null || dte != null || interest!= null || details!=
 		   }
 		return c;	
 	}
-
 	public ArrayList srchViewController(SearchCriteria b) {                                   
 		String s = b.getSearch();
 		System.out.println(b.getSearch()); 	

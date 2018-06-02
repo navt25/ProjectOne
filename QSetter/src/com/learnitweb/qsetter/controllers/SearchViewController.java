@@ -21,13 +21,16 @@ import com.util.DbConnection;
 
 @Controller
 public class SearchViewController {
+	
 	GetDao svc =new GetDao();
 	@ResponseBody
 	@RequestMapping("/welcomenew")
 	public void helloWorld(@RequestBody SearchCriteria b) {
+		ArrayList l1 = new ArrayList();
 		ModelAndView model = new ModelAndView("default");
 		model.addObject("welcomeMessage", "helloworld");
 		svc.srchViewController(b);
+		
 	}
 	@ResponseBody
 	@RequestMapping("/welcomenew2")
