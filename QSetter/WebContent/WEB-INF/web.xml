@@ -7,10 +7,11 @@
     <welcome-file>welcomesearch.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>create.html</welcome-file>
+    <welcome-file>create.htm</welcome-file>
+    <welcome-file>create.jsp</welcome-file>
     <welcome-file>searchTag.jsp</welcome-file>
+   
   </welcome-file-list>
   <servlet>
   	<servlet-name>spring-dispatcher</servlet-name>

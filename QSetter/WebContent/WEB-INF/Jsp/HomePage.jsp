@@ -5,21 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-
-	
-	
-	<h1>${welcomeMessage}</h1>
-	
+	<h1>${welcomeMessage}</h1>	
 <style>
-body {
-/* The image used 
-    background-image: ("img_girl.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;*/
-    
-   
+body { 
     background-color: lightblue; --> 
 }
 #welcmPageMsg {
@@ -52,29 +40,21 @@ table {
    
 }
 #create{color:black;}
-#update{color:violet;}
-#search{color:pink;}
-#delete{color:blue;}                  
-                                        
+#search{color:black;}                                                        
 </style>
 </head>
 <body>
-<p id="welcmPageMsg"><b>Welcome to my university page</b> </p>
 
+<p id="welcmPageMsg"><b>Welcome to my university page</b> </p>
 <table align="center" style="width:50%">
 	  <tr>
-	   <td><a id="create" href="default">(1.) Create Student Record</a></td>
+	   <td><a id="create" href="create">(1.) Create Student Record</a></td>
 	  </tr>
 	  <tr>
-	   <td><a id="update" href="">(2.) Update Student Record</a></td>
+	   <td><a id="search" href="searchTag">(2.) Search Student Record</a></td>
 	  </tr>
-	  <tr>
-	   <td><a id="delete" href="">(3.) Delete Student Record</a></td>
-	  </tr>
-	  <tr>
-	   <td><a id="search" href="searchTag">(4.) Search Student Record</a></td>
-	  </tr>
-	  </table>
+	  
+</table>
 </body>
 </html>
 

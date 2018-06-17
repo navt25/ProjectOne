@@ -15,29 +15,31 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.learnitweb.qsetter.dao.GetDao;
-import com.learnitweb.qsetter.request.SearchCriteria;
+import com.learnitweb.qsetter.request.Select_createCriteria;
 import com.learnitweb.response.CustomResponse;
 import com.util.DbConnection;
 
 @Controller
-public class SearchViewController {
-	
-	GetDao svc =new GetDao();
+public class Select_detail_CreateController {
+	GetDao gd1 =new GetDao();
 	@ResponseBody
 	@RequestMapping("/welcomenew")
-	public void helloWorld(@RequestBody SearchCriteria b) {
+	public ArrayList Select_detail(@RequestBody Select_createCriteria b) {
 		ArrayList l1 = new ArrayList();
-		ModelAndView model = new ModelAndView("default");
+		ModelAndView model = new ModelAndView("create");
 		model.addObject("welcomeMessage", "helloworld");
-		svc.srchViewController(b);
-		
+		ArrayList p = gd1.Select_detail(b);
+		return p;
 	}
+	
 	@ResponseBody
 	@RequestMapping("/welcomenew2")
-	public void helloWorld2(@RequestBody SearchCriteria x) {
-		// SearchCriteria gender;
+	public CustomResponse createMethod(@RequestBody Select_createCriteria x) {
+		// SearchCriteria gender;ArrayList
+		System.out.println("create method");
 		ModelAndView model = new ModelAndView("success");
 		model.addObject("welcomeMessage", "helloworld");
-		svc.srchViewController2(x);
-
-}}
+		CustomResponse c= gd1.create(x);
+        return c;
+}
+	}

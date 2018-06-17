@@ -2,36 +2,25 @@ package com.learnitweb.qsetter.request;
 
 import java.util.ArrayList;
 
-public class SearchCriteria {
- public String search;
+public class Select_createCriteria {
+ public String select_detail;
  public String name;
  public String gender;
  public String date;
  public ArrayList interest;
- public String details;
- public ArrayList additionalDetails;
- 
-
-
-public ArrayList getAdditionalDetails() {
-	return additionalDetails;
-}
-
-public void setAdditionalDetails(ArrayList additionalDetails) {
-	this.additionalDetails = additionalDetails;
-}
+/* public String details;*/
 
 public String getDate() {
 	return date;
 }
 
-public String getDetails() {
+/*public String getDetails() {
 	return details;
 }
 
 public void setDetails(String details) {
 	this.details = details;
-}
+}*/
 
 public ArrayList getInterest() {
 	return interest;
@@ -61,13 +50,14 @@ public void setName(String name) {
 	this.name = name;
 }
 
-public String getSearch() {
-	return search;
+public String getSelect_detail() {
+	return select_detail;
 }
 
-public void setSearch(String search) {
-	this.search = search;
+public void setSelect_detail(String select_detail) {
+	this.select_detail = select_detail;
 }
+
 
 
 }

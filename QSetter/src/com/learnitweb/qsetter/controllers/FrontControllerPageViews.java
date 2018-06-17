@@ -3,10 +3,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.learnitweb.qsetter.request.SearchCriteria;
+import com.learnitweb.qsetter.request.Select_createCriteria;
 
 @Controller
 
@@ -19,33 +21,18 @@ public class FrontControllerPageViews {
 		System.out.println("inside controller");
 		return model;
 	}
-	/*@RequestMapping("/default")//   /welcome
-	public ModelAndView helloCountry() {
-		ModelAndView model = new ModelAndView("default");//default
-		model.addObject("welcomeMessageCountry", "hellocountry");
-		System.out.println("inside controller country");
-		return model;
-	}
-	@RequestMapping("/searchTag")//   /welcome
-	public ModelAndView helloState() {
-		ModelAndView model = new ModelAndView("searchTag");//default
-		model.addObject("welcomeMessageState", "hellostate");
-		System.out.println("inside controller state");
-		return model;
-	}*/
-	@RequestMapping("/default")
+	@RequestMapping("/create")
 	public String contactinfo() {
 		System.out.println("you are in create");
-	    return "default";
+	    return "create";
 	  }
 	@RequestMapping("/searchTag")
 	public String searchinfo() {
 		System.out.println("you are in search");
 	    return "searchTag";	
 	}
-
-
-
+	
+	
 }
 
 

@@ -14,10 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.learnitweb.qsetter.request.SearchCriteria;
+import com.learnitweb.qsetter.request.Select_createCriteria;
 import com.learnitweb.qsetter.dao.GetDao;
 import com.learnitweb.qsetter.request.Search;
 import com.learnitweb.response.CustomResponse;
@@ -25,15 +27,51 @@ import com.util.DbConnection;
 
 @Controller
 public class SearchController {
+	GetDao sc =new GetDao();
 	@ResponseBody
-	@RequestMapping("/welcomesearch")
-	public void helloWorld2(@RequestBody Search x) {
+	@RequestMapping(value="/welcomesearch")//"/welcomesearch"
+	public ArrayList<Search> helloWorld2(@RequestBody Search x) {
 		System.out.println("value 1 of search");
 		ModelAndView model = new ModelAndView("searchTag");
 		model.addObject("searchMessage", "helloworld of id.");
 		System.out.println("inside controller of search");
-		GetDao sc =new GetDao();
-		sc.srchController(x);
-		 
+		ArrayList<Search> p = sc.srchController(x);
+		return p;
+	}     
+	
+	@ResponseBody
+	@RequestMapping("/Update")//   
+	public ModelAndView poststate( Search x ,@RequestParam("id") String id , @RequestParam("name") String name,
+			@RequestParam("gender") String gender , @RequestParam("date") String date,
+			@RequestParam("interest") String interest , @RequestParam("details") String details){
+		ModelAndView model = new ModelAndView("Update");//default
+		
+		System.out.println("id:"+id+", name:"+name+", gender:"+gender+", date:"+date+", interest:"+interest+", details:"+details);
+		ArrayList s = new ArrayList();
+											 
+		
+		s.add(id);
+		s.add(name);
+		s.add(gender);
+		s.add(date);
+		s.add(interest);
+		s.add(details);
+		System.out.println(s);
+		model.addObject("data", s );
+		System.out.println("inside controller update");
+		System.out.println("gendereeee="+gender);
+		ArrayList<Search> p = sc.srchControllertwo(x);
+		System.out.println("nameeee="+name);
+		return model;
 	}
+	
 }
+
+
+
+
+          
+
+
+/*CustomResponse d = sc.srchController(x);
+return d;*/
