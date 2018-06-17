@@ -11,35 +11,35 @@
 <form name="UpdateForm" id="Up" > 
 <table>
  <tr>
-    <td>Update NAME</td>
-	<td><input type="text" placeholder="Enter NAME" id="nam" name="name_detail" value="${data[1]}"       /></td>
+    <td>Update/Delete NAME</td>
+	<td><input type="text" placeholder="Enter NAME" id="nam" name="name_detail" value=  "${data.name}"    /></td>
   </tr>
 <tr>
-    <td>Update GENDER</td>
-	<td><input type="text" placeholder="Enter GENDER" id="gen" name="gender" value="${data[2]}" /></td>
+    <td>Update/Delete GENDER</td>
+	<td><input type="text" placeholder="Enter GENDER" id="gen" name="gender" value= "${data.gender}"  /></td> 
 </tr>
 <tr>
-    <td>Update DATE</td>
-	<td><input type="text" placeholder="Enter DATE" id="dat" name="date" value="${data[3]}" /></td>
+    <td>Update/Delete DATE</td>
+	<td><input type="text" placeholder="Enter DATE" id="dat" name="date" value= "${data.date}" /></td>
 </tr>
 <tr>
-    <td>Update INTEREST</td>
-	<td><input type="text" placeholder="Enter INTEREST" id="inte" name="interst" value="${data[4]}" /></td>
+    <td>Update/Delete INTEREST</td>
+	<td><input type="text" placeholder="Enter INTEREST" id="inte" name="interst" value="${data.interest}"/></td>
 </tr>
 <tr>
-    <td>Update DETAILS</td>
-	<td><input type="text" placeholder="Enter DETAILS" id="deta" name="details" value="${data[5]}" /></td>
+    <td>Update/Delete DETAILS</td>
+	<td><input type="text" placeholder="Enter DETAILS" id="deta" name="details" value="${data.details}"/></td>
 </tr>  
 <tr>
-    <td>Update ID</td>
-	<td><input type="text" placeholder="Enter ID" id="identity" name="idno" value="${data[0]}" readonly/></td>
+    <td>Update/Delete ID</td>
+	<td><input type="text" placeholder="Enter ID" id="identity" name="idno" value="${data.id}" readonly/></td>
  </tr>
   </table>
   <button type="button" id="btnup" >Click Me!</button>
   
 </form>
             <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-			<script type="text/javascript" src="js/search_2.js"> </script>      
+			<script type="text/javascript" src="js/search.js"> </script>      
 </body>
 </html>
 

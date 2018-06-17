@@ -47,20 +47,12 @@ public class SearchController {
 		ModelAndView model = new ModelAndView("Update");//default
 		
 		System.out.println("id:"+id+", name:"+name+", gender:"+gender+", date:"+date+", interest:"+interest+", details:"+details);
-		ArrayList s = new ArrayList();
-											 
 		
-		s.add(id);
-		s.add(name);
-		s.add(gender);
-		s.add(date);
-		s.add(interest);
-		s.add(details);
-		System.out.println(s);
-		model.addObject("data", s );
+		Search search = new Search(name, gender, date, interest, details, id);
+		System.out.println(search);
+		model.addObject("data", search );
 		System.out.println("inside controller update");
 		System.out.println("gendereeee="+gender);
-		ArrayList<Search> p = sc.srchControllertwo(x);
 		System.out.println("nameeee="+name);
 		return model;
 	}
@@ -71,7 +63,3 @@ public class SearchController {
 
 
           
-
-
-/*CustomResponse d = sc.srchController(x);
-return d;*/

@@ -30,11 +30,8 @@ $(document).ready(function() {
 				  }
        });
  });
-	  
-
-    
+	      
     $("#btnCreate").click(function(){
-    	
     	var name = $('#fname').val();
         var gender = document.getElementsByName("gender");
 		var dob = $('#demo').val(); 
@@ -99,9 +96,7 @@ $(document).ready(function() {
     	
     	console.log("hurray!!");
  	    console.log(jsonObj);
-    	
-     
-    	$.ajax({
+    	   $.ajax({
     	   type : "POST",
     	   contentType : "application/json",
     	   url:'welcomenew2',
@@ -114,15 +109,10 @@ $(document).ready(function() {
         	  console.log("data.status:",data.status);
         	  console.log("data.message:",data.message);
         	  alert(data.message);
-           
-           },
+              },
         	  error:function(err){
-        		  console.log("error",err);
+        	  console.log("error",err);
         	  }
-       
-    });   	
-    	
+           });   	
     });	
-    
-    	
 });

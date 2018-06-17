@@ -21,7 +21,8 @@ import com.util.DbConnection;
 
 @Controller
 public class Select_detail_CreateController {
-	GetDao gd1 =new GetDao();
+	GetDao gd1 = new GetDao();
+
 	@ResponseBody
 	@RequestMapping("/welcomenew")
 	public ArrayList Select_detail(@RequestBody Select_createCriteria b) {
@@ -31,15 +32,14 @@ public class Select_detail_CreateController {
 		ArrayList p = gd1.Select_detail(b);
 		return p;
 	}
-	
+
 	@ResponseBody
 	@RequestMapping("/welcomenew2")
 	public CustomResponse createMethod(@RequestBody Select_createCriteria x) {
-		// SearchCriteria gender;ArrayList
 		System.out.println("create method");
 		ModelAndView model = new ModelAndView("success");
 		model.addObject("welcomeMessage", "helloworld");
-		CustomResponse c= gd1.create(x);
-        return c;
-}
+		CustomResponse c = gd1.create(x);
+		return c;
 	}
+}

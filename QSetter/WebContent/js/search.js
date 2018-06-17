@@ -63,17 +63,12 @@ $("#btn_srch").click(function(){
    },
 });   	});	
 
-/*if(alink.href = "Update?id="+data[i].id  +"&name="+data[i].name+"&gender="+data[i].gender
-           	+"&date="+data[i].date+"&interest="+data[i].interest+"&details="+data[i].details){*/
 document.getElementById("nam").setAttribute("readonly", true);
 document.getElementById("gen").setAttribute("readonly", true);
-document.getElementById("dte").setAttribute("readonly", true);
+document.getElementById("dat").setAttribute("readonly", true);
 document.getElementById("inte").setAttribute("readonly", true);
 document.getElementById("deta").setAttribute("readonly", true);
-/*}
-else {
-	document.getElementById("identity").setAttribute("readonly", true);
-}*/
+
 $("#btnup").click(function(){
 	var jsonObj = {}
 	console.log(jsonObj);

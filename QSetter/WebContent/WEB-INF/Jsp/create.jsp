@@ -2,10 +2,15 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <head>
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="js/applicationFormScript.js"> </script>
-<script type="text/javascript" src="js/create.js"> </script> 
+<script type="text/javascript" src="js/applicationFormScript.js">
+	
+</script>
+<script type="text/javascript" src="js/create.js">
+	
+</script>
 
-<link rel="stylesheet" type="text/css" href="css/applicationFormStyle.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/applicationFormStyle.css" />
 <title>Home page</title>
 </head>
 <body>
@@ -13,11 +18,9 @@
 		<table align="center" style="width: 50%">
 			<p class="ex1">
 			<div class="intro">
-				<label id="nameErrMsg"></label> 
-				<label id="genderErrMsg"></label> 
-				<label id="dobErrMsg"></label>
-				<label id="interestsErrMsg"></label> 
-				<label id="detailsErrMsg"></label>
+				<label id="nameErrMsg"></label> <label id="genderErrMsg"></label> <label
+					id="dobErrMsg"></label> <label id="interestsErrMsg"></label> <label
+					id="detailsErrMsg"></label>
 			</div>
 			<tr>
 				<td><spring:message code="label.fname" /></td>

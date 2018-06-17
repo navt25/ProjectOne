@@ -11,12 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.learnitweb.qsetter.request.Select_createCriteria;
 
 @Controller
-
 public class FrontControllerPageViews {
-	
-	@RequestMapping("/")//   /welcome
+	@RequestMapping("/")
 	public ModelAndView helloWorld() {
-		ModelAndView model = new ModelAndView("HomePage");//default
+		ModelAndView model = new ModelAndView("HomePage");
 		model.addObject("welcomeMessage", "");
 		System.out.println("inside controller");
 		return model;
